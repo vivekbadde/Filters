@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<title>3</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+
+<ul><h3>Order By Name:</h3>
+  <li ng-repeat="x in names | orderBy:'name'">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul><br /><br /><br /><br />
+
+<ul><h3>Order By Name:</h3>
+  <li ng-repeat="x in names | orderBy:'country'">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {name:'Vivek',country:'India'},
+        {name:'Tarang',country:'China'},
+        {name:'Amit',country:'North America'},
+        {name:'Neha',country:'Russia'},
+        {name:'Sukriti',country:'Nepal'},
+        {name:'Ankur',country:'Bhutan'},
+        {name:'Hemanth',country:'SriLanka'},
+        {name:'Pritish',country:'S.Africa'},
+        {name:'Nikhelesh',country:'Australia'}
+        ];
+                $scope.hidden=true;
+				$scope.hidden1=true;
+				$scope.showasc=function(){
+						$scope.hidden=$scope.hidden ? false:true;
+				}
+				$scope.showdesc=function(){
+						$scope.hidden1=$scope.hidden1 ? false:true;
+				}
+});
+</script>
+
+
+	
+
+
+</body>
+</html>
